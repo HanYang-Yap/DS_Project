@@ -5,7 +5,8 @@ public class Main {
 		
 		String a = "Hello World!";
 		String b = "TWICE";
-		System.out.print(a.concat(b));
+		
+		System.out.println(a);
 		
 	}
 	
