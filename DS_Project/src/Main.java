@@ -8,6 +8,7 @@ public class Main {
 		String c;
 		String d;
 		String e;
+		String abcd;
 		
 		System.out.println(a.indexOf("rld", 4));
 		
