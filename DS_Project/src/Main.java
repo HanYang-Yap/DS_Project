@@ -10,7 +10,7 @@ public class Main {
 		String dee;
 		String e;
 		String abcd;
-		
+		int aaa=528;
 		System.out.println(a.indexOf("rld", 4));
 	}
 	
