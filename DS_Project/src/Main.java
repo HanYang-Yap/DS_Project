@@ -5,10 +5,12 @@ public class Main {
 		
 		String a = "Hello World!";
 		String b = "TWICE";
-		String c=" ";
+		String c = "TWICE";
 		
+
 		System.out.println(a);
 		
 	}
 	
 }
+
