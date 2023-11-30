@@ -7,10 +7,9 @@ public class Main {
 		String b = "TWICE";
 
 		String c;
-		String d;
+		String dee;
 		String e;
 
-	
 	}
 	
 }
