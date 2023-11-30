@@ -7,6 +7,7 @@ public class Main {
 		String b = "TWICE";
 		String c;
 		String d;
+		String e;
 		
 		System.out.println(a.indexOf("rld", 4));
 		
