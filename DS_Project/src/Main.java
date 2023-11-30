@@ -8,6 +8,7 @@ public class Main {
 		String c;
 		String d;
 		String e;
+		int bbb = 531;
 		
 		System.out.println(a.indexOf("rld", 4));
 		
