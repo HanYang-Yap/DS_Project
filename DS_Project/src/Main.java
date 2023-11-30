@@ -6,6 +6,7 @@ public class Main {
 		String a = "Hello World!";
 		String b = "TWICE";
 		String c;
+		String d;
 		
 		System.out.println(a.indexOf("rld", 4));
 		
