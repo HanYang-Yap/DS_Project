@@ -5,7 +5,7 @@ public class Main {
 		
 		String testing = "Hello World";
 		
-		System.out.print(testing);
+		System.out.print(testing); 
 		
 	}
 	
