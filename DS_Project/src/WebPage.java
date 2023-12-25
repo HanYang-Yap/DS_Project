@@ -20,6 +20,9 @@ public class WebPage
 		score = 0;
 		for(Keyword k : keywords) {
 			score += k.weight * counter.countKeyword(k.name);
+			System.out.println("aaaaaaaaaaaaaaaaaaaaa");
+			System.out.println(counter.countKeyword(k.name));
 		}
+		
 	}
 }

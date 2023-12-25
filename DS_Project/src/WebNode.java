@@ -9,17 +9,13 @@ public class WebNode
 	public double nodeScore;
 	public KeywordList keywordList;
 
-	public WebNode(WebPage webPage)
+	public WebNode(WebPage webPage) throws IOException
 	{
 		this.webPage = webPage;
 		this.children = new ArrayList<WebNode>();
 		KeywordList keywordList = new  KeywordList();
-		try {
-			this.setNodeSocre(keywordList.keywords);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		System.out.print(keywordList.keywords);
+		this.setNodeSocre(keywordList.keywords);
 		
 	}
 	
