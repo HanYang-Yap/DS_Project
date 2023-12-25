@@ -37,7 +37,7 @@ public class WebTree
         {
 			
             WebPage k = heap.poll().webPage;
-            System.out.println(k.name);
+            System.out.println(k.name + ", " + k.score);
 			
         }
 	}
