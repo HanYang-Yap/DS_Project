@@ -7,8 +7,14 @@ public class Keyword {
 	public Keyword(String name, int count, double weight) {
 		this.name = name;
 		this.count = count;
-		this.weight = weight;  
+		this.weight = weight; 
+		
 	}
+	
+	public Keyword(String name, int count){
+		this.name = name;
+		this.count = count;
+    }
 	
     public int getCount() {
     	return count;
