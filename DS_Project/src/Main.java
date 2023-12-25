@@ -11,13 +11,13 @@ public class Main {
 			System.out.println("User input: ");
 			String userInput = userScanner.nextLine();
 			
-			System.out.println(new GoogleQuery(userInput).query());
+			System.out.println(new GoogleQuery(userInput).query()); 
 //			System.out.println(new GoogleQuery("�f�X").query());
 			userScanner.close();
 		} 
 		catch (IOException e) {
 			
-			e.printStackTrace();
+			e.printStackTrace(); 
 		}
 	}
 }
