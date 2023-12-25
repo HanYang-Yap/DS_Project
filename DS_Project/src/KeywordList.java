@@ -2,12 +2,59 @@ import java.util.*;
 
 public class KeywordList
 {
-	private LinkedList<Keyword> lst;
+	private LinkedList<Keyword> linkedList;
 	private ArrayList<Keyword> lst;
 
+	ArrayList<Keyword> keywords = new ArrayList<>();
+	public KeywordList(String name, int weight) {
+		
+		Keyword hikingTrail = new Keyword("HIKING TRAIL", 5);
+		Keyword scenery = new Keyword("SCENARY", 3);
+		Keyword nationalPark = new Keyword("NATIONAL PARK", 3);
+		Keyword forest = new Keyword("FOREST", 3);
+		Keyword climb = new Keyword("CLIMB", 3);
+		Keyword guide = new Keyword("GUIDE", 3);
+		Keyword hiking = new Keyword("HIKING", 3);
+		Keyword nature = new Keyword("NATURE", 4);
+		Keyword hundredMountian = new Keyword("100 MOUNTAIN", 2);
+		Keyword exercise = new Keyword("EXERCISE", 1);
+		Keyword attraction = new Keyword("ATTRACTION", 4);
+		Keyword publicTransportation = new Keyword("PUBLIC TRANSPORTATION", 2);
+		Keyword equipment = new Keyword("EQUIPMENT", -3);
+		Keyword dictionary = new Keyword("DICTIONARY", -10);
+		Keyword translate = new Keyword("TRANSLATE", -10);
+		Keyword weather = new Keyword("WEATHER", -3);
+		Keyword hotSpring = new Keyword("HOT SPRING", -2);
+		Keyword dictionary_chinese = new Keyword("字典", -10);
+		Keyword translate_chinese = new Keyword("翻譯", -10);
+		Keyword meaning = new Keyword("意思", -10);
+		
+		keywords.add(hikingTrail);
+		keywords.add(scenery);
+		keywords.add(nationalPark);
+		keywords.add(forest);
+		keywords.add(climb);
+		keywords.add(guide);
+		keywords.add(hiking);
+		keywords.add(nature);
+		keywords.add(hundredMountian);
+		keywords.add(exercise);
+		keywords.add(attraction);
+		keywords.add(publicTransportation);
+		keywords.add(equipment);
+		keywords.add(dictionary);
+		keywords.add(translate);
+		keywords.add(dictionary_chinese);
+		keywords.add(translate_chinese);
+		keywords.add(meaning);
+		keywords.add(weather);
+		keywords.add(hotSpring);
+		
+	}
+	
 	public KeywordList()
 	{
-		this.lst = new LinkedList<Keyword>();
+		this.linkedList = new LinkedList<Keyword>();
 		this.lst = new ArrayList<Keyword>();
 	}
 
@@ -185,7 +232,7 @@ public class KeywordList
 
 	public void deleteAll()
 	{
-		lst = new LinkedList<Keyword>();
+		linkedList = new LinkedList<Keyword>();
 	}
 
 	private void printKeywordList(LinkedList<Keyword> kLst)
