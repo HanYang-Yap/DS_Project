@@ -13,36 +13,7 @@ public class KeywordList
 
 	public void add(Keyword keyword)
 	{
-		// YOUR TURN
-		// 1.add keyword to proper index base on its count.
-		// ASCENDING SORT BY COUNT AND WEIGHT
-		// You can use printKeywordList(lst) to check if elements are sorted
-		boolean inserted=false;
-		for (int i = 0; i < lst.size(); i++)
-		{
-			Keyword k = lst.get(i);
-			if (keyword.count < k.count)
-			{	lst.add(i,keyword);
-				inserted=true;
-				break;
-				// If the count is smaller than the original, place it in the front.
-				// If their count are same, smaller weight placed in the front
-			}else if( keyword.count==k.count) 
-			{	if(keyword.weight<=k.weight) {
-				lst.add(i,keyword);
-				inserted=true;
-				break;
-				}	
-			}
-		}
-		if(!inserted) 
-		{
-			lst.add(keyword);
-		}
-		
 		lst.add(keyword);
-		
-		
 	}
 
 	public void outputIndex(int i)

@@ -5,7 +5,6 @@ public class Main {
 
 	public static void main(String[] args) {
 		try {
-			
 			Scanner userScanner = new Scanner(System.in);
 			System.out.println("User input: ");
 			String userInput = userScanner.nextLine();
