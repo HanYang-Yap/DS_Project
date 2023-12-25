@@ -21,6 +21,7 @@ public class GoogleQuery
 	public String content;
 	public ArrayList<WebNode> queue;
 	
+	
 	public GoogleQuery(String searchKeyword)
 	{
 		this.queue = new ArrayList<WebNode>();
@@ -86,6 +87,7 @@ public class GoogleQuery
 		Elements lis = doc.select("div");
 		lis = lis.select(".kCrYT");
 		
+		
 		for(Element li : lis)
 		{
 			try 
@@ -98,6 +100,7 @@ public class GoogleQuery
 					continue;
 				}
 				System.out.println("Title: " + title + " , url: " + citeUrl);
+				
 				queue.add(new WebNode(new WebPage(title, citeUrl)));
 				
 				

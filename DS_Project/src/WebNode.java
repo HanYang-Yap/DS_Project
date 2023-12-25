@@ -7,15 +7,25 @@ public class WebNode
 	public ArrayList<WebNode> children;
 	public WebPage webPage;
 	public double nodeScore;
+	public KeywordList keywordList;
 
 	public WebNode(WebPage webPage)
 	{
 		this.webPage = webPage;
 		this.children = new ArrayList<WebNode>();
+		KeywordList keywordList = new  KeywordList();
+		try {
+			this.setNodeSocre(keywordList.keywords);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
 	
 	public void setNodeSocre(ArrayList<Keyword> keywords) throws IOException{
 		this.webPage.setScore(keywords);
+		this.nodeScore = this.webPage.score;
 	}
 	
 	
