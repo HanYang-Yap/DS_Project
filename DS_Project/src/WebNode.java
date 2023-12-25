@@ -6,25 +6,21 @@ public class WebNode
 	public WebNode parent;
 	public ArrayList<WebNode> children;
 	public WebPage webPage;
-	public double nodeScore;// This node's score += all its children's nodeScore
+	public double nodeScore;
 
 	public WebNode(WebPage webPage)
 	{
 		this.webPage = webPage;
 		this.children = new ArrayList<WebNode>();
 	}
-
-	public void setNodeScore(ArrayList<Keyword> keywords) throws IOException
-	{
-		nodeScore = 0;
-		this.webPage.setScore(keywords); // 父element:webpage設定分數
-		nodeScore += this.webPage.score;
-		for(WebNode w : children) {
-			w.webPage.setScore(keywords); // all 子element:webpage設定分數
-			nodeScore += w.webPage.score;
-		}
+	
+	public void setNodeSocre(ArrayList<Keyword> keywords) throws IOException{
+		this.webPage.setScore(keywords);
 	}
-
+	
+	
+	//======================================//
+	
 	public void addChild(WebNode child)
 	{
 		// add the WebNode to its children list

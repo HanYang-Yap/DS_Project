@@ -1,15 +1,71 @@
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.PriorityQueue;
+import java.util.PriorityQueue;
 
 public class WebTree
 {
-	public WebNode root;
+	//public WebNode root;
+	private PriorityQueue<WebNode> heap;
 
-	public WebTree(WebPage rootPage)
+	public WebTree()
 	{
-		this.root = new WebNode(rootPage);
+		//this.root = new WebNode(rootPage);
+		this.heap = new PriorityQueue<WebNode>(10, new WebComparator());
+	}
+	
+	
+	public void add(WebNode k)
+	{
+		heap.offer(k);
 	}
 
+	public void peek()
+	{
+		if (heap.peek() == null)
+		{
+			System.out.println("InvalidOperation");
+			return;
+		}
+
+		WebNode k = heap.peek();
+		System.out.println(k.toString());
+	}
+
+	public void removeMin()
+	{
+		//remove minimal element and print it
+		if (heap.isEmpty()) {
+			System.out.println("InvalidOperation");
+			return;
+		}
+		
+		WebNode min = heap.poll();
+		System.out.println(min.toString());
+	}
+
+	public void output()
+	{
+		// print the output in order and remove all element
+		if (heap.isEmpty()) {
+			System.out.println("InvalidOperation");
+			return;
+		}
+		while (!heap.isEmpty())
+        {
+			WebNode k = heap.poll();
+            System.out.print(k.toString());
+        }
+	}
+	
+	
+	
+	//========================================//
+	
+	
+	
+	
+	/*
 	public void setPostOrderScore(ArrayList<Keyword> keywords) throws IOException
 	{
 		setPostOrderScore(root, keywords);
@@ -58,4 +114,5 @@ public class WebTree
 		}
 		return retVal;
 	}
+	*/
 }
