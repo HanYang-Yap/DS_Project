@@ -4,21 +4,26 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class GoogleQuery 
 {
 	public String searchKeyword;
 	public String url;
 	public String content;
+	public ArrayList<WebNode> queue;
 	
 	public GoogleQuery(String searchKeyword)
 	{
+		this.queue = new ArrayList<WebNode>();
 		this.searchKeyword = searchKeyword;
 		try 
 		{
@@ -92,8 +97,9 @@ public class GoogleQuery
 				{
 					continue;
 				}
-				
 				System.out.println("Title: " + title + " , url: " + citeUrl);
+				queue.add(new WebNode(new WebPage(title, citeUrl)));
+				
 				
 				//put title and pair into HashMap
 				retVal.put(title, citeUrl);

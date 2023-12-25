@@ -9,9 +9,13 @@ public class Main {
 			System.out.println("User input: ");
 			String userInput = userScanner.nextLine();
 			
-			System.out.println(new GoogleQuery(userInput).query()); 
+			GoogleQuery result = new GoogleQuery(userInput);
+			System.out.println(result.query()); 
 //			System.out.println(new GoogleQuery("�f�X").query());
 			userScanner.close();
+			
+			WebTree webTree = new WebTree(result.queue);
+			webTree.output();
 		} 
 		catch (IOException e) {
 			
