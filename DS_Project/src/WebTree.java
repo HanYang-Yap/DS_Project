@@ -28,10 +28,13 @@ public class WebTree
         ArrayList<WebNode> origin = new ArrayList<>();
         ArrayList<WebNode> tempList = new ArrayList<>();
         int index = 0;
-        for(WebNode w : queue) {
-        	origin.add(w);
-        }
         WebNode max = origin.get(0);
+        for(WebNode w : queue) {
+        	if(w.score>max.score) {
+        		origin.add(origin.indexOf(max)-1);
+        	}
+        	
+        }
         while (!origin.isEmpty()) {
             for(int i=0; i<origin.size();i++) {
             	
