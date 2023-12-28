@@ -6,8 +6,6 @@ public class Main {
 	public static void main(String[] args) {
 		KeywordList keywords=new KeywordList();
 		keywords.setKword();
-		keywords.printKeywordList(keywords.keywords);
-
 		try {
 			Scanner userScanner = new Scanner(System.in);
 			System.out.println("User input: ");

@@ -35,8 +35,7 @@ public class GoogleQuery
 			// when entering Chinese keywords.
 			String encodeKeyword=java.net.URLEncoder.encode(searchKeyword,"utf-8");
 			this.url = "https://www.google.com/search?q="+encodeKeyword+"&oe=utf8&num=20";
-			
-			// this.url = "https://www.google.com/search?q="+searchKeyword+"&oe=utf8&num=20";
+
 		}
 		catch (Exception e)
 		{
@@ -47,10 +46,12 @@ public class GoogleQuery
 	private String fetchContent() throws IOException
 	{
 		String retVal = "";
-
-		URL u = new URL(url);
+		
+		this.url = this.url.replaceAll("%25", "%");
+		
+		URL u = new URL(this.url);
 		URLConnection conn = u.openConnection();
-		//set HTTP header
+		//set HTTP header 
 		conn.setRequestProperty("User-agent", "Chrome/107.0.5304.107");
 		InputStream in = conn.getInputStream();
 
@@ -102,7 +103,11 @@ public class GoogleQuery
 				}
 				// 替換"/url?q="為空字符串
 				String citeUrl = href.replace("/url?q=", "");
-				
+				citeUrl = href.replace("%25", "%");
+				if(citeUrl.contains("https://tw.dictionary.yahoo.com/dictionary%3Fp%3D")) {
+					citeUrl = href.replace("https://tw.dictionary.yahoo.com/dictionary%3Fp%3D", "https://tw.dictionary.search.yahoo.com/search?p=");
+				}
+				//
 				if(title.equals("")) 
 				{
 					continue;
@@ -122,5 +127,5 @@ public class GoogleQuery
 		}
 		
 		return retVal;
-	}
+	}//https://tw.dictionary.search.yahoo.com/search?p=climbing
 }

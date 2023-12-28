@@ -27,7 +27,7 @@ public class WebNode
 		score = 0;
 		for(Keyword k : keywordList.keywords) {
 			score += k.weight * counter.countKeyword(k.name);
-			System.out.println(counter.countKeyword(k.name));
+			//System.out.println(counter.countKeyword(k.name));
 		}
 	}
 	
