@@ -54,5 +54,6 @@ public class WordCounter
 		}
 
 		return retVal;
-	}
+	} //https://www.koreagaja.com/mt-mt_2/
+	//https://zh.wikipedia.org/zh-tw/MT
 }

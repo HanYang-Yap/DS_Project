@@ -92,8 +92,16 @@ public class GoogleQuery
 		{
 			try 
 			{
-				String citeUrl = li.select("a").get(0).attr("href").replace("/url?q=", "");
+				String href = li.select("a").get(0).attr("href").replace("/url?q=", "");
 				String title = li.select("a").get(0).select(".vvjwJb").text();
+//				String citeUrl = li.select("a").get(0).absUrl("href");
+				int saIndex = href.indexOf("&sa=");
+				if (saIndex != -1) {
+				    // 如果找到了"&sa="，截取"&sa="之前的部分
+				    href = href.substring(0, saIndex);
+				}
+				// 替換"/url?q="為空字符串
+				String citeUrl = href.replace("/url?q=", "");
 				
 				if(title.equals("")) 
 				{
@@ -101,7 +109,7 @@ public class GoogleQuery
 				}
 				System.out.println("Title: " + title + " , url: " + citeUrl);
 				
-				queue.add(new WebNode(new WebPage(title, citeUrl)));
+				queue.add(new WebNode(title, citeUrl));
 				
 				
 				//put title and pair into HashMap

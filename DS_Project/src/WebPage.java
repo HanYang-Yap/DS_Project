@@ -16,11 +16,10 @@ public class WebPage
 	}
 
 	public void setScore(ArrayList<Keyword> keywords) throws IOException
-	{
+	{	System.out.println("this is set score");
 		score = 0;
 		for(Keyword k : keywords) {
 			score += k.weight * counter.countKeyword(k.name);
-			System.out.println("aaaaaaaaaaaaaaaaaaaaa");
 			System.out.println(counter.countKeyword(k.name));
 		}
 		

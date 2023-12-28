@@ -10,47 +10,28 @@ public class KeywordList
 		
 	}
 	public void setKword() {
-		Keyword hikingTrail = new Keyword("HIKING TRAIL", 5);
-		Keyword scenery = new Keyword("SCENARY", 3);
-		Keyword nationalPark = new Keyword("NATIONAL PARK", 3);
-		Keyword forest = new Keyword("FOREST", 3);
-		Keyword climb = new Keyword("CLIMB", 3);
-		Keyword guide = new Keyword("GUIDE", 3);
-		Keyword hiking = new Keyword("HIKING", 3);
-		Keyword nature = new Keyword("NATURE", 4);
-		Keyword hundredMountian = new Keyword("100 MOUNTAIN", 2);
-		Keyword exercise = new Keyword("EXERCISE", 1);
-		Keyword attraction = new Keyword("ATTRACTION", 4);
-		Keyword publicTransportation = new Keyword("PUBLIC TRANSPORTATION", 2);
-		Keyword equipment = new Keyword("EQUIPMENT", -3);
-		Keyword dictionary = new Keyword("DICTIONARY", -10);
-		Keyword translate = new Keyword("TRANSLATE", -10);
-		Keyword weather = new Keyword("WEATHER", -3);
-		Keyword hotSpring = new Keyword("HOT SPRING", -2);
-		Keyword dictionary_chinese = new Keyword("字典", -10);
-		Keyword translate_chinese = new Keyword("翻譯", -10);
-		Keyword meaning = new Keyword("意思", -10);
 		
-		keywords.add(hikingTrail);
-		keywords.add(scenery);
-		keywords.add(nationalPark);
-		keywords.add(forest);
-		keywords.add(climb);
-		keywords.add(guide);
-		keywords.add(hiking);
-		keywords.add(nature);
-		keywords.add(hundredMountian);
-		keywords.add(exercise);
-		keywords.add(attraction);
-		keywords.add(publicTransportation);
-		keywords.add(equipment);
-		keywords.add(dictionary);
-		keywords.add(translate);
-		keywords.add(dictionary_chinese);
-		keywords.add(translate_chinese);
-		keywords.add(meaning);
-		keywords.add(weather);
-		keywords.add(hotSpring);
+		keywords.add(new Keyword("HIKING TRAIL", 5));
+		keywords.add(new Keyword("SCENARY", 3));
+		keywords.add(new Keyword("NATIONAL PARK", 3));
+		keywords.add(new Keyword("FOREST", 3));
+		keywords.add(new Keyword("CLIMB", 3));
+		keywords.add(new Keyword("GUIDE", 3));
+		keywords.add(new Keyword("HIKING", 3));
+		keywords.add(new Keyword("NATURE", 4));
+		keywords.add(new Keyword("100 MOUNTAIN", 2));
+		keywords.add(new Keyword("EXERCISE", 1));
+		keywords.add(new Keyword("ATTRACTION", 4));
+		keywords.add(new Keyword("PUBLIC TRANSPORTATION", 2));
+		keywords.add(new Keyword("EQUIPMENT", -3));
+		keywords.add(new Keyword("DICTIONARY", -10));
+		keywords.add(new Keyword("TRANSLATE", -10));
+		keywords.add(new Keyword("WEATHER", -3));
+		keywords.add(new Keyword("翻譯", -10));
+		keywords.add(new Keyword("意思", -10));
+		keywords.add(new Keyword("字典", -10));
+		keywords.add(new Keyword("HOT SPRING", -2));
+		
 		
 		
 	}
