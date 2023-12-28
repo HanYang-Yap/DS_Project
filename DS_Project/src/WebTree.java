@@ -15,15 +15,23 @@ public class WebTree
 	public WebTree(ArrayList<WebNode> queue) throws IOException
 	{
 		//this.root = new WebNode(rootPage);
-		
 		this.heap = new PriorityQueue<WebNode>(queue.size(), new WebComparator());
 		this.queue = queue;
 		for(WebNode w : queue) {
 			this.add(w);
 			w.setNodeSocre();
 		}
+		sort();
 		
+	}
 	
+	public void sort() {
+		Collections.sort(queue, new Comparator<WebNode>() {
+			public int compare(WebNode node1,WebNode node2) {
+				return Double.compare(node2.score, node1.score);
+			}
+		});
+		
 	}
 
 	public void add(WebNode k)
@@ -34,16 +42,21 @@ public class WebTree
 	public void output()
 	{
 		// print the output in order and remove all element
-		if (heap.isEmpty()) {
-			System.out.println("InvalidOperation");
-			return;
+//		if (heap.isEmpty()) {
+//			System.out.println("InvalidOperation");
+//			return;
+//		}
+//		while (!heap.isEmpty())
+//        {
+//            WebNode k = heap.poll();
+//            System.out.println(k.name + ", " + k.score);
+//			
+//        }
+		for(WebNode w:queue) {
+			System.out.println(w.name + ", " + w.score);
 		}
-		while (!heap.isEmpty())
-        {
-            WebNode k = heap.poll();
-            System.out.println(k.name + ", " + k.score);
-			
-        }
+		
+		
 	}
 	
 }

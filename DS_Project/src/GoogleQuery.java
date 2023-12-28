@@ -127,5 +127,5 @@ public class GoogleQuery
 		}
 		
 		return retVal;
-	}//https://tw.dictionary.search.yahoo.com/search?p=climbing
+	}
 }
