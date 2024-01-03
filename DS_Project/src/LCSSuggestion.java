@@ -4,7 +4,7 @@ import java.util.List;
 
 public class LCSSuggestion {
 
-    public ArrayList<Character> longestCommonSubsequence(String X, String Y) {
+    public static List<Character> longestCommonSubsequence(String X, String Y) {
         int m = X.length();
         int n = Y.length();
 
@@ -20,7 +20,7 @@ public class LCSSuggestion {
             }
         }
 
-        ArrayList<Character> lcs = new ArrayList<>();
+        List<Character> lcs = new ArrayList<>();
         int i = m, j = n;
         while (i > 0 && j > 0) {
             if (X.charAt(i - 1) == Y.charAt(j - 1)) {
@@ -37,8 +37,22 @@ public class LCSSuggestion {
         Collections.reverse(lcs);
         return lcs;
     }
-    
-    private String lcsResult(String X, String Y) {
+
+    public static String keywordSuggestion(List<String> titleList) {
+        if (titleList.isEmpty()) {
+            return "";
+        }
+
+        String lcsResult = titleList.get(0);
+
+        for (int i = 1; i < titleList.size(); i++) {
+            lcsResult = lcsResult(lcsResult, titleList.get(i));
+        }
+
+        return lcsResult;
+    }
+
+    private static String lcsResult(String X, String Y) {
         List<Character> lcs = longestCommonSubsequence(X, Y);
 
         StringBuilder result = new StringBuilder();
@@ -48,30 +62,11 @@ public class LCSSuggestion {
 
         return result.toString();
     }
-    public  ArrayList<String> keywordSuggestions(ArrayList<String> titleList) {
-        ArrayList<String> result = new ArrayList<>();
 
-        if (titleList.isEmpty()) {
-            return result;
-        }
+    public static void main(String[] args) {
+        List<String> titleList = List.of("擷取的標題1", "擷取的標題2", "擷取的標題3");
+        String suggestedKeywords = keywordSuggestion(titleList);
 
-        String lcsResult = titleList.get(0);
-
-        for (int i = 1; i < titleList.size(); i++) {
-            lcsResult = lcsResult(lcsResult, titleList.get(i));
-        }
-
-        // 將每個標題與LCS進行比較，並將相同的字符添加到結果列表中
-        for (String title : titleList) {
-            ArrayList<Character> titleLCS = longestCommonSubsequence(lcsResult, title);
-            StringBuilder suggestedKeyword = new StringBuilder();
-            for (Character ch : titleLCS) {
-                suggestedKeyword.append(ch);
-            }
-            result.add(suggestedKeyword.toString());
-        }
-
-        return result;
+        System.out.println("建議的關鍵字: " + suggestedKeywords);
     }
-
 }
