@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.Map.Entry;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -56,8 +57,6 @@ public class TestProject extends HttpServlet {
 		    s[num][1] = value;
 		    num++;
 		}
-		request.getRequestDispatcher("googleitem.jsp")
-		 .forward(request, response); 
 		
 		LCSSuggestion suggestion = new LCSSuggestion();
 	    String suggestedKeyword = suggestion.keywordSuggestion(google.titleList);
@@ -66,14 +65,15 @@ public class TestProject extends HttpServlet {
 		String res = "阿里山";
 		res = suggestedKeyword;
 		request.setAttribute("res", res);
-		request.getRequestDispatcher("googleitem.jsp").forward(request, response); 
 		
+		request.getRequestDispatcher("googleitem.jsp").forward(request, response); 
 		
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);

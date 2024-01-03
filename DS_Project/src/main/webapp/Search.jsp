@@ -43,7 +43,7 @@ onfocus="placeholder= '' " onblur="placeholder='請輸入關鍵字'" />
 style='position:absolute;width:40px;height:40px;left:50%;top:50%;margin-top:-58px;margin-left:350px'/>
 </div>
 <div>
-<a href ='http://localhost:8080/Lab11Testing/TestProject'><img src="images/band.png" style='position:absolute;width:500px;height:500px;left:50%;top:50%;margin-top:-450px;margin-left:-250px'></a>
+<a href ='http://localhost:8080/DS_Project/TestProject'><img src="images/band.png" style='position:absolute;width:500px;height:500px;left:50%;top:50%;margin-top:-450px;margin-left:-250px'></a>
 </div>
 </form>
 </body>
