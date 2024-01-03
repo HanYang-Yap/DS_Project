@@ -7,6 +7,6 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry exported="true" kind="lib" path="C:/Users/Admin/eclipse-workspace/HW11_111306018/src/src/main/webapp/WEB-INF/lib/jsoup-1.11.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/sophi/eclipse-workspace/JDBC/jsoup-1.17.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
