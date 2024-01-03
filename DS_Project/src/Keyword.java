@@ -9,7 +9,6 @@ public class Keyword {
 		this.name = name;
 		this.weight = weight; 
     }
-	
    
     public String getName() {
     	return name;

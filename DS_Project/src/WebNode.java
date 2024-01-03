@@ -20,19 +20,13 @@ public class WebNode
 		this.name = name;
 		this.counter = new WordCounter(url);
 		keywordList=new KeywordList();
-		keywordList.setKword();
 	}
 	
 	public void setNodeSocre() throws IOException{
 		score = 0;
 		for(Keyword k : keywordList.keywords) {
 			score += k.weight * counter.countKeyword(k.name);
-			//System.out.println(counter.countKeyword(k.name));
 		}
 	}
-	
-	
-	//======================================//
-	
 	
 }

@@ -56,24 +56,5 @@ public class WordCounter
 	    } catch (IOException e) {
 	        return 0; // 返回0表示計算失敗
 	    }
-//		if (content == null)
-//		{
-//			content = fetchContent();
-//		}
-//		
-//		content = content.toUpperCase();
-//		keyword = keyword.toUpperCase();
-//
-//		int retVal = 0;
-//		int fromIdx = 0;
-//		int found = -1;
-//
-//		while ((found = content.indexOf(keyword, fromIdx)) != -1)
-//		{
-//			retVal++;
-//			fromIdx = found + keyword.length();
-//		}
-//
-//		return retVal;
 	}
 }

@@ -6,6 +6,7 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -20,20 +21,16 @@ public class GoogleQuery
 	public String url;
 	public String content;
 	public ArrayList<WebNode> queue;
-	
+	public ArrayList<String> titleList = new ArrayList<>();
 	
 	public GoogleQuery(String searchKeyword)
 	{
 		this.queue = new ArrayList<WebNode>();
-		this.searchKeyword = searchKeyword;
+		this.searchKeyword = searchKeyword+"爬山";
 		try 
 		{
 			// This part has been specially handled for Chinese keyword processing. 
-			// You can comment out the following two lines 
-			// and use the line of code in the lower section. 
-			// Also, consider why the results might be incorrect 
-			// when entering Chinese keywords.
-			String encodeKeyword=java.net.URLEncoder.encode(searchKeyword,"utf-8");
+			String encodeKeyword=java.net.URLEncoder.encode(this.searchKeyword,"utf-8");
 			this.url = "https://www.google.com/search?q="+encodeKeyword+"&oe=utf8&num=20";
 
 		}
@@ -66,20 +63,12 @@ public class GoogleQuery
 		return retVal;
 	}
 	
-	public HashMap<String, String> query() throws IOException
+	public LinkedHashMap<String, String> query() throws IOException
 	{
 		if(content == null)
 		{
 			content = fetchContent();
 		}
-
-		HashMap<String, String> retVal = new HashMap<String, String>();
-		
-		/* 
-		 * some Jsoup source
-		 * https://jsoup.org/apidocs/org/jsoup/nodes/package-summary.html
-		 * https://www.1ju.org/jsoup/jsoup-quick-start
- 		 */
 		
 		//using Jsoup analyze html string
 		Document doc = Jsoup.parse(content);
@@ -115,15 +104,23 @@ public class GoogleQuery
 				System.out.println("Title: " + title + " , url: " + citeUrl);
 				
 				queue.add(new WebNode(title, citeUrl));
-				
-				
-				//put title and pair into HashMap
-				retVal.put(title, citeUrl);
+				titleList.add(title);
 
 			} catch (IndexOutOfBoundsException e) 
 			{
 //				e.printStackTrace();
 			}
+		}
+		
+
+		
+		KeywordList keywords=new KeywordList();
+		WebTree webTree = new WebTree(this.queue);
+		webTree.output();
+		
+		LinkedHashMap<String, String> retVal = new LinkedHashMap<String, String>();
+		for(WebNode w : webTree.getQueue()) {
+			retVal.put(w.name,w.url);
 		}
 		
 		return retVal;
