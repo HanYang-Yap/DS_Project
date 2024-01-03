@@ -63,10 +63,4 @@ public class LCSSuggestion {
         return result.toString();
     }
 
-    public static void main(String[] args) {
-        List<String> titleList = List.of("擷取的標題1", "擷取的標題2", "擷取的標題3");
-        String suggestedKeywords = keywordSuggestion(titleList);
-
-        System.out.println("建議的關鍵字: " + suggestedKeywords);
-    }
 }
