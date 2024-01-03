@@ -80,8 +80,8 @@
     <div class="lcs-container">
     	<a>—————————</a><br>
         <a>建議搜索的關鍵字:</a><br>
-    <%  String lcs = (String)request.getAttribute("res");;
- 		String check ="阿里山";
+    <%  
+    	String lcs = (String)request.getAttribute("res");;
 	%>
 		<a><%= request.getAttribute("res") %></a><br>
     	<a>—————————</a><br>  
