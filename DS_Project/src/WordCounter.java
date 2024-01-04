@@ -14,23 +14,21 @@ public class WordCounter
 	{
 		this.urlStr = urlStr;
 	}
+	
+	private String fetchContent() throws IOException {
+	    URL url = new URL(this.urlStr);
+	    URLConnection conn = url.openConnection();
+	    InputStream in = conn.getInputStream();
+	    BufferedReader br = new BufferedReader(new InputStreamReader(in));
 
-	private String fetchContent() throws IOException
-	{
-		URL url = new URL(this.urlStr);
-		URLConnection conn = url.openConnection();
-		InputStream in = conn.getInputStream();
-		BufferedReader br = new BufferedReader(new InputStreamReader(in));
+	    StringBuilder retVal = new StringBuilder();
+	    String line;
 
-		String retVal = "";
-		String line = null;
+	    while ((line = br.readLine()) != null) {
+	        retVal.append(line).append("\n");
+	    }
 
-		while ((line = br.readLine()) != null)
-		{
-			retVal = retVal + line + "\n";
-		}
-
-		return retVal;
+	    return retVal.toString();
 	}
 
 	public int countKeyword(String keyword)

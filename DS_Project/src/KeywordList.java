@@ -11,7 +11,8 @@ public class KeywordList
 		
 	}
 	public void setKword() {
-		
+		keywords.add(new Keyword("健行筆記", 5));
+		keywords.add(new Keyword("路線", 5));
 		keywords.add(new Keyword("HIKING TRAIL", 5));
 		keywords.add(new Keyword("步道", 4));
 		keywords.add(new Keyword("SCENARY", 3));
@@ -25,6 +26,7 @@ public class KeywordList
 		keywords.add(new Keyword("GUIDE", 3));
 		keywords.add(new Keyword("HIKING", 3));
 		keywords.add(new Keyword("攀爬", 3));
+		keywords.add(new Keyword("峰", 3));
 		keywords.add(new Keyword("登頂", 3));
 		keywords.add(new Keyword("高峰", 3));
 		keywords.add(new Keyword("NATURE", 4));
@@ -37,6 +39,9 @@ public class KeywordList
 		keywords.add(new Keyword("DICTIONARY", -10));
 		keywords.add(new Keyword("TRANSLATE", -10));
 		keywords.add(new Keyword("WEATHER", -3));
+		keywords.add(new Keyword("新聞", -10));
+		keywords.add(new Keyword("時報", -10));
+		keywords.add(new Keyword("娛樂", -10));
 		keywords.add(new Keyword("翻譯", -10));
 		keywords.add(new Keyword("意思", -10));
 		keywords.add(new Keyword("字典", -10));

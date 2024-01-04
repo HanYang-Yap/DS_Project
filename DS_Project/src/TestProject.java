@@ -60,11 +60,12 @@ public class TestProject extends HttpServlet {
 		
 		LCSSuggestion suggestion = new LCSSuggestion();
 	    String suggestedKeyword = suggestion.keywordSuggestion(google.titleList);
-		System.out.println("建議的關鍵字: " + suggestedKeyword);
-		
-		String res = "阿里山";
-		res = suggestedKeyword;
-		request.setAttribute("res", res);
+		if(suggestedKeyword.equals(" ")|suggestedKeyword.equals("")) {
+			suggestedKeyword = "山";
+		}
+	    System.out.println("建議的關鍵字: " + suggestedKeyword);
+
+		request.setAttribute("res", suggestedKeyword);
 		
 		request.getRequestDispatcher("googleitem.jsp").forward(request, response); 
 		
